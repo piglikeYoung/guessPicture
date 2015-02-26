@@ -121,6 +121,13 @@
     // 1.题目索引递增
     self.index++;
     
+    if (self.index >= self.questions.count) {
+        // 播放一个动画效果，或者其他的操作……
+        NSLog(@"通关了!");
+        
+        return;
+    };
+    
     // 2. 取出索引对应的题目模型
     JHQuestion *question = self.questions[self.index];
     
@@ -214,12 +221,118 @@
 
 /** 答案按钮的点击事件 */
 - (void)answerClick:(UIButton *)btn{
-
+    
+    // 1.是否有文字，如果没有，直接返回
+    if (btn.currentTitle.length == 0) {
+        return;
+    }
+    
+    // 2. 如果有文字
+    // 1> 将对应的备选按钮恢复显示
+    for (UIButton *button in self.optionView.subviews) {
+        if ([button.currentTitle isEqualToString:btn.currentTitle] && button.isHidden) {
+            button.hidden = NO;
+            
+            // 2>清空答案按钮中的文字
+            [btn setTitle:nil forState:UIControlStateNormal];
+            
+            break;
+        }
+    }
+    
+    // 3.点击答案按钮后，意味这答案不完整了，将所有按钮的颜色设置为黑色
+    for (UIButton *btn in self.answerView.subviews) {
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
 }
 
 /** 备选按钮点击事件 */
 - (void)optionClick:(UIButton *)btn{
+    // 1> 把备选按钮中的文字，填充到答案区
+    // 找答案区中第一个按钮文字为空的按钮
+    for (UIButton *button in self.answerView.subviews) {
+        if (button.currentTitle.length == 0) {
+            [button setTitle:btn.currentTitle forState:UIControlStateNormal];
+            
+            break;
+        }
+    }
     
+    // 2>把按钮隐藏
+    btn.hidden = YES;
+    
+    // 3> 判断胜负
+    // 3.1 所有的答案按钮都填满，遍历所有答案区的按钮
+    BOOL isFull = YES;
+    NSMutableString *strM = [NSMutableString string];
+    
+    for (UIButton *btn in self.answerView.subviews) {
+        if (!btn.currentTitle.length) {
+            // 没有填满
+            isFull = NO;
+            
+            break;
+        } else {
+            [strM appendString:btn.currentTitle];
+        }
+    }
+    
+    if (isFull) {
+        // 用户选择的答案和当前题目的答案对比
+        JHQuestion *question = self.questions[self.index];
+        
+        if ([question.answer isEqualToString:strM]) {
+            // 修改答案区按钮的颜色 -> 蓝色
+            for (UIButton *btn in self.answerView.subviews) {
+                [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+            }
+            
+            // 加分操作
+            [self changeScore : 500];
+            
+            // 等待0.5s之后，跳到下一题
+            [self performSelector:@selector(nextQuestion) withObject:nil afterDelay:0.5f];
+        }else{
+            NSLog(@"错错错！");
+            // 修改答案区按钮的颜色 -> 红色
+            for (UIButton *btn in self.answerView.subviews) {
+                [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            }
+        }
+    }
 }
+
+/** 修改分数 */
+- (void)changeScore:(int)score{
+    int currentScore = [self.scoreBtn.currentTitle intValue];
+    currentScore += score;
+    [self.scoreBtn setTitle:[NSString stringWithFormat:@"%d",currentScore] forState:UIControlStateNormal];
+}
+
+/** 提示按钮 */
+- (IBAction)tips {
+    // 1.将答案去的所有按钮清空
+    for (UIButton *btn in self.answerView.subviews) {
+        [self answerClick:btn];
+    }
+    
+    // 2. 找到正确答案的第一个字，显示到答案区中的第一个按钮上
+    JHQuestion *question = self.questions[self.index];
+    
+    NSString *firstWord = [question.answer substringToIndex:1];
+    // 3. 遍历所有的备选按钮，找到第一个匹配的文字，模拟点击
+    for (UIButton *btn in self.optionView.subviews) {
+        if ([btn.currentTitle isEqualToString:firstWord]) {
+            [self optionClick:btn];
+            
+            // 减分操作
+            [self changeScore:-1000];
+            
+            break;
+        }
+    }
+}
+
+
 
 @end

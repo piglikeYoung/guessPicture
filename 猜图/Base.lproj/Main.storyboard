@@ -49,6 +49,9 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="btn_left_highlighted"/>
+                                <connections>
+                                    <action selector="tips" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QXY-sd-9ty"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QB3-sb-8oy">
                                 <rect key="frame" x="250" y="109" width="70" height="36"/>
