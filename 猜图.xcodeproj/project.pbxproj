@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DBED63C1A9DCF1F0081F712 /* JHQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBED63B1A9DCF1F0081F712 /* JHQuestion.m */; };
+		7DBED6441A9DE8A80081F712 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBED6431A9DE8A80081F712 /* NSArray+Log.m */; };
 		7DCDC0101A9D78DF007BD032 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDC00F1A9D78DF007BD032 /* main.m */; };
 		7DCDC0131A9D78DF007BD032 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDC0121A9D78DF007BD032 /* AppDelegate.m */; };
 		7DCDC0161A9D78DF007BD032 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDC0151A9D78DF007BD032 /* ViewController.m */; };
@@ -14,6 +16,7 @@
 		7DCDC01B1A9D78DF007BD032 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCDC01A1A9D78DF007BD032 /* Images.xcassets */; };
 		7DCDC01E1A9D78DF007BD032 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DCDC01C1A9D78DF007BD032 /* LaunchScreen.xib */; };
 		7DCDC02A1A9D78DF007BD032 /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDC0291A9D78DF007BD032 /* __Tests.m */; };
+		7DCDC0341A9D7933007BD032 /* questions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DCDC0331A9D7933007BD032 /* questions.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7DBED63B1A9DCF1F0081F712 /* JHQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHQuestion.m; sourceTree = "<group>"; };
+		7DBED63E1A9DCFD50081F712 /* JHQuestion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHQuestion.h; sourceTree = "<group>"; };
+		7DBED6421A9DE8A80081F712 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		7DBED6431A9DE8A80081F712 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		7DCDC00A1A9D78DF007BD032 /* 猜图.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "猜图.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCDC00E1A9D78DF007BD032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DCDC00F1A9D78DF007BD032 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +47,7 @@
 		7DCDC0231A9D78DF007BD032 /* 猜图Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "猜图Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCDC0281A9D78DF007BD032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DCDC0291A9D78DF007BD032 /* __Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __Tests.m; sourceTree = "<group>"; };
+		7DCDC0331A9D7933007BD032 /* questions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = questions.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +93,11 @@
 				7DCDC0121A9D78DF007BD032 /* AppDelegate.m */,
 				7DCDC0141A9D78DF007BD032 /* ViewController.h */,
 				7DCDC0151A9D78DF007BD032 /* ViewController.m */,
+				7DBED6421A9DE8A80081F712 /* NSArray+Log.h */,
+				7DBED6431A9DE8A80081F712 /* NSArray+Log.m */,
 				7DCDC0171A9D78DF007BD032 /* Main.storyboard */,
+				7DBED63E1A9DCFD50081F712 /* JHQuestion.h */,
+				7DBED63B1A9DCF1F0081F712 /* JHQuestion.m */,
 				7DCDC01A1A9D78DF007BD032 /* Images.xcassets */,
 				7DCDC01C1A9D78DF007BD032 /* LaunchScreen.xib */,
 				7DCDC00D1A9D78DF007BD032 /* Supporting Files */,
@@ -96,6 +108,7 @@
 		7DCDC00D1A9D78DF007BD032 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7DCDC0331A9D7933007BD032 /* questions.plist */,
 				7DCDC00E1A9D78DF007BD032 /* Info.plist */,
 				7DCDC00F1A9D78DF007BD032 /* main.m */,
 			);
@@ -199,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DCDC0341A9D7933007BD032 /* questions.plist in Resources */,
 				7DCDC0191A9D78DF007BD032 /* Main.storyboard in Resources */,
 				7DCDC01E1A9D78DF007BD032 /* LaunchScreen.xib in Resources */,
 				7DCDC01B1A9D78DF007BD032 /* Images.xcassets in Resources */,
@@ -219,7 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DBED6441A9DE8A80081F712 /* NSArray+Log.m in Sources */,
 				7DCDC0161A9D78DF007BD032 /* ViewController.m in Sources */,
+				7DBED63C1A9DCF1F0081F712 /* JHQuestion.m in Sources */,
 				7DCDC0131A9D78DF007BD032 /* AppDelegate.m in Sources */,
 				7DCDC0101A9D78DF007BD032 /* main.m in Sources */,
 			);
@@ -412,6 +428,7 @@
 				7DCDC02F1A9D78DF007BD032 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7DCDC0301A9D78DF007BD032 /* Build configuration list for PBXNativeTarget "猜图Tests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +437,7 @@
 				7DCDC0321A9D78DF007BD032 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
