@@ -14,7 +14,7 @@
 #define kButtonMargin 10.0
 #define kTotalCol   7
 
-@interface ViewController ()
+@interface ViewController ()<UIAlertViewDelegate,UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *noLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -126,9 +126,13 @@
         self.index = 9;
         
         // 播放一个动画效果，或者其他的操作……
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"通关了" message:@"恭喜你" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:@"继续",@"lalal", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"通关了" message:@"恭喜你" delegate:self cancelButtonTitle:@"好的" otherButtonTitles:@"继续",@"lalal", nil];
         
         [alertView show];
+        
+//        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"通关了" delegate:self cancelButtonTitle:@"结束了" destructiveButtonTitle:@"警告" otherButtonTitles:@"哈哈", nil];
+//        
+//        [sheet showInView:self.view];
         return;
     };
     
@@ -143,6 +147,15 @@
     
     // 5. 创建备选答案按钮
     [self createOptionButtons:question];
+}
+
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"clickedButtonAtIndex,%d",buttonIndex);
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"clickedButtonAtIndex,%d",buttonIndex);
 }
 
 /** 设置基本信息 */
