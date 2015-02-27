@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A9DFDB6C-08CB-4705-8A04-1CE15B4CC251</string>
+	<key>IDESourceControlProjectName</key>
+	<string>猜图</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E8C33651A8CA9F0021C89FD535268D17C5CA34E9</key>
+		<string>https://github.com/piglikeYoung/guessPicture.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>猜图.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E8C33651A8CA9F0021C89FD535268D17C5CA34E9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/piglikeYoung/guessPicture.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E8C33651A8CA9F0021C89FD535268D17C5CA34E9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E8C33651A8CA9F0021C89FD535268D17C5CA34E9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>%E7%8C%9C%E5%9B%BE</string>
+		</dict>
+	</array>
+</dict>
+</plist>

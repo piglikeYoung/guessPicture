@@ -122,9 +122,13 @@
     self.index++;
     
     if (self.index >= self.questions.count) {
-        // 播放一个动画效果，或者其他的操作……
-        NSLog(@"通关了!");
         
+        self.index = 9;
+        
+        // 播放一个动画效果，或者其他的操作……
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"通关了" message:@"恭喜你" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:@"继续",@"lalal", nil];
+        
+        [alertView show];
         return;
     };
     
@@ -217,6 +221,8 @@
         // 恢复所有隐藏的按钮
         btn.hidden = NO;
     }
+    
+    [self.optionView setUserInteractionEnabled:YES];
 }
 
 /** 答案按钮的点击事件 */
@@ -244,6 +250,9 @@
     for (UIButton *btn in self.answerView.subviews) {
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
+    
+    // 4.恢复备选按钮的可点击
+    [self.optionView setUserInteractionEnabled:YES];
 }
 
 /** 备选按钮点击事件 */
@@ -299,6 +308,13 @@
                 [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
             }
         }
+        
+        // 填满后备选按钮不允许点击
+//        for (UIButton *button in self.optionView.subviews) {
+//            [button setEnabled:NO];
+//        }
+        
+        [self.optionView setUserInteractionEnabled:NO];
     }
 }
 
